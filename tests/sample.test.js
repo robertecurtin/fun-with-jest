@@ -9,12 +9,12 @@ describe('the thing', () => {
     console.log('my test says before each');
   })
 
-  newTest('should do a test', true, () => {
+  itShould('do a test', true, () => {
     console.log('run this');
     someGlobalFunction();
   });
 
-  newTest('should not do a test', false, () => {
+  itShould('not do a test', false, () => {
     console.log('run this');
     someGlobalFunction();
   });
