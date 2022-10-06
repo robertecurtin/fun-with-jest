@@ -1,0 +1,7 @@
+{
+  "exec": "npm run test && npm run lint",
+  "quiet": true,
+  "events": {
+    "start": "clear"
+  }
+}
