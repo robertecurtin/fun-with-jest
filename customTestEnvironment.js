@@ -13,6 +13,16 @@ class CustomEnvironment extends NodeEnvironment {
     console.log('super is happy');
     this.global.someGlobalFunction = () => { console.log("itsa me a global"); }
     this.global.someGlobalFunctionBeforeTheDescribe = () => { console.log("itsa me a global before describe"); }
+    this.global.newTest = (name, feature, fn) => {
+      console.log('running the test');
+      if(feature) {
+        console.log('feature valid');
+        this.global.test(name, fn);
+      }
+      else {
+        this.global.xtest(name, fn);
+      }
+    }
     console.log('made a global function');
   }
 

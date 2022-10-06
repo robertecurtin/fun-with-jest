@@ -8,7 +8,13 @@ describe('the thing', () => {
   beforeEach(async () => {
     console.log('my test says before each');
   })
-  it('should do a test', () => {
+
+  newTest('should do a test', true, () => {
+    console.log('run this');
+    someGlobalFunction();
+  });
+
+  newTest('should not do a test', false, () => {
     console.log('run this');
     someGlobalFunction();
   });
