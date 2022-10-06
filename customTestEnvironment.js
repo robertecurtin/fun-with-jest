@@ -3,26 +3,20 @@ const NodeEnvironment = require('jest-environment-node').TestEnvironment;
 class CustomEnvironment extends NodeEnvironment {
   constructor(config, context) {
     super(config, context);
-    // console.log(config.globalConfig);
-    // console.log(config.projectConfig);
     this.testPath = context.testPath;
     this.docblockPragmas = context.docblockPragmas;
   }
 
   async setup() {
+    console.log('getting ready for some tests');
     await super.setup();
-    // await someSetupTasks(this.testPath);
+    console.log('super is happy');
     this.global.someGlobalFunction = () => { console.log("itsa me a global"); }
-
-    // // Will trigger if docblock contains @my-custom-pragma my-pragma-value
-    // if (this.docblockPragmas['my-custom-pragma'] === 'my-pragma-value') {
-    //   // ...
-    // }
+    this.global.someGlobalFunctionBeforeTheDescribe = () => { console.log("itsa me a global before describe"); }
+    console.log('made a global function');
   }
 
   async teardown() {
-    // this.global.someGlobalObject = destroyGlobalObject();
-    // await someTeardownTasks();
     await super.teardown();
   }
 

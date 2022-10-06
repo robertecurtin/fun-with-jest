@@ -1,17 +1,14 @@
 'use strict';
-// const helperFileThatNeedsInitializing = import('helperFileThatNeedsInitializing');
 
-console.log('about to describe');
-someGlobalFunction();
+console.log(`about to describe and I can see ${someGlobalFunctionBeforeTheDescribe}`);
+someGlobalFunctionBeforeTheDescribe();
 describe('the thing', () => {
-console.log('about to it');
+  console.log('about to it');
   it('should do a test', () => {
     console.log('run this');
     someGlobalFunction();
-    // helperFileThatNeedsInitializing();
   });
 
-  it('should fail a test', () => {
-    // asdfdas();
+  it('should another test', () => {
   });
 });

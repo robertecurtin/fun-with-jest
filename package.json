@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "lint": "eslint 'sample/**/*.js' 'src/**/*.js' 'spec/**/*.js'",
+    "lint": "eslint 'tests/**/*.js'",
     "fix": "npm run lint -- --fix",
     "watch": "nodemon"
   },
